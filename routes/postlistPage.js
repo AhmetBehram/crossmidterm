@@ -37,7 +37,7 @@ if(props.loading){
         renderItem={({ item }) => (
           <View style={styles.item}>
             <Button onPress={() => {
-                props.navigator.navigate('UserDetailsPage',{id : item.key});
+                props.navigator.navigate('PostDetailsPage',{id : item.key});
             }}
              title={item.name} color="black">
               

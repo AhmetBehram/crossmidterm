@@ -4,6 +4,7 @@ import MyApp from '../routes/userlistPage';
 import UserDetails from '../routes/userdetailsPage'
 import MainMenu from '../routes/mainMenu'
 import PostList from '../routes/postlistPage'
+import PostDetails from '../routes/postdetailsPage'
 
 const screens = {
   
@@ -19,6 +20,9 @@ const screens = {
   },
   PostListPage : {
     screen: PostList,
+  },
+  PostDetailsPage : {
+    screen: PostDetails,
   },
   
 

@@ -51,7 +51,7 @@ const MainScreen = (probs) => {
                     <Text style={{textAlign:"left",fontSize:16,paddingLeft:10}}>Catchphrase : {probs.mydata.company.catchPhrase}</Text>
                     <Text style={{textAlign:"left",fontSize:16,paddingLeft:10}}>Bs : {probs.mydata.company.bs}</Text>
                 </View>
-                <Footer></Footer>
+
             </View>
         );
       }
