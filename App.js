@@ -1,21 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {Component} from 'react';
+import Header from './Components/userlistpageComps/header';
+import Footer from './Components/userlistpageComps/footer';
+import {Button,ActivityIndicator,FlatList,StyleSheet, Text, SafeAreaView,View} from 'react-native';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
+import { backgroundColor } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
+import Navigator from './routes/homeStack';
+import 'react-native-gesture-handler';
 
-export default function App() {
+
+
+
+export default function app(){
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Navigator/>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
