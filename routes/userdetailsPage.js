@@ -40,7 +40,18 @@ const MainScreen = (probs) => {
                     <Text style={{textAlign:"left",fontSize:16,paddingLeft:10}}>Suite : {probs.mydata.address.suite}</Text>
                     <Text style={{textAlign:"left",fontSize:16,paddingLeft:10}}>Zipcode : {probs.mydata.address.zipcode}</Text>
                     <Text style={{textAlign:"left",fontSize:16,paddingLeft:10}}>City : {probs.mydata.address.city}</Text>
+                    <Text style={{textAlign:"left",fontSize:16,paddingLeft:10}}>Latitude : {probs.mydata.address.geo.lat}</Text>
+                    <Text style={{textAlign:"left",fontSize:16,paddingLeft:10}}>Longitude : {probs.mydata.address.geo.lng}</Text>
                 </View>
+                <View style={{height:80,justifyContent:"center"}}>
+                    <Text style={{textAlign:"center",fontSize:18}}>Company Information</Text>
+                </View>
+                <View style={{height:150,justifyContent:"space-evenly"}}>
+                    <Text style={{textAlign:"left",fontSize:16,paddingLeft:10}}>Company Name : {probs.mydata.company.name}</Text>
+                    <Text style={{textAlign:"left",fontSize:16,paddingLeft:10}}>Catchphrase : {probs.mydata.company.catchPhrase}</Text>
+                    <Text style={{textAlign:"left",fontSize:16,paddingLeft:10}}>Bs : {probs.mydata.company.bs}</Text>
+                </View>
+                <Footer></Footer>
             </View>
         );
       }

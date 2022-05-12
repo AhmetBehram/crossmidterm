@@ -2,16 +2,25 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
 import MyApp from '../routes/userlistPage';
 import UserDetails from '../routes/userdetailsPage'
-
+import MainMenu from '../routes/mainMenu'
+import PostList from '../routes/postlistPage'
 
 const screens = {
-    
-    UserListPage : {
+  
+  
+  MainMenuPage : {
+    screen: MainMenu,
+  },
+  UserListPage : {
     screen: MyApp,
   },
   UserDetailsPage : {
     screen: UserDetails,
   },
+  PostListPage : {
+    screen: PostList,
+  },
+  
 
 
 }
