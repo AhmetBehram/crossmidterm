@@ -29,7 +29,7 @@ if(props.loading){
 
 //return(<View></View>);
 
-  
+  console.log(names_data);
   return(
       <View style={{backgroundColor:"white",height:'83%'}}>
         <FlatList

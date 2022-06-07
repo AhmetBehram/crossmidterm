@@ -18,25 +18,63 @@ const MainScreen = (probs) => {
       } else {
       
         var names_data=[];
-        console.log(probs.mydata);
-      
+        console.log(probs.mydata[1]);
+
+        for(let i=0;i<probs.mydata[1].length;i++){
+            let tmp_dic={key : i , comment : probs.mydata[1][i]["body"], name : probs.mydata[1][i]["email"]};
+            names_data.push(tmp_dic);
+        }
+
+        console.log(names_data);
+
         return(
+            <SafeAreaView>
             <View>
                 <View style={{height:80,justifyContent:"center",backgroundColor:"grey"}}>
-                    <Text style={{textAlign:"center",fontSize:24}}>{probs.mydata.title}</Text>
+                    <Text style={{textAlign:"center",fontSize:24}}>{probs.mydata[0].title}</Text>
                 </View>
-                <View style={{height:'100%',justifyContent:"flex-start",paddingTop:10}}>
-                    <Text style={{textAlign:"left",fontSize:16,paddingLeft:10}}>{probs.mydata.body}</Text>
-            
+                <View style={{height:'20%',justifyContent:"flex-start",paddingTop:10}}>
+                    <Text style={{textAlign:"center",fontSize:20,paddingLeft:10}}>POST</Text>
+                    <Text style={{textAlign:"left",fontSize:16,paddingLeft:10}}>{probs.mydata[0].body}</Text>
+                </View>
+                <View style={{height:'70%'}}>
+                <Text style={{textAlign:"center",fontSize:20,paddingLeft:10}}>COMMENTS</Text>
+                <FlatList
+                data={names_data}
+                renderItem={({ item }) => (
+                <View style={styles.item}>
+                    <Text style={{color:'blue'}}>{item.name}</Text>  
+                    <Text>{item.comment}</Text> 
                 </View>
                 
 
+                )}
+                keyExtractor={item => item.key}
+                
+                />
+                </View>
+
             </View>
+            </SafeAreaView>
         );
       }
 
 
 }
+
+const styles = StyleSheet.create({
+    item: {
+      marginTop: 2,
+      padding:15,
+      backgroundColor:"lightgrey",
+      fontSize:24
+    },
+    text: {
+      textAlign: 'center',
+      fontSize: 25,
+      fontWeight: '500',
+    }
+  });
 
 
 
@@ -46,9 +84,14 @@ var is_loading=true;
 
 const loadPostData = async (post_id) => {
     var my_url='https://jsonplaceholder.typicode.com/posts/'+post_id.toString();
+    var my_url_comments='https://jsonplaceholder.typicode.com/posts/'+post_id.toString()+'/comments';
     const response = await fetch(my_url);
+    const response_comment = await fetch (my_url_comments)
+    var my_data=[];
     const data = await response.json();
-    return data;
+    const data_comment = await response_comment.json();
+    my_data.push(data,data_comment);
+    return my_data;
 }
 
 var post_data=null;
