@@ -7,6 +7,7 @@ import PostList from '../routes/postlistPage'
 import PostDetails from '../routes/postdetailsPage'
 import AlbumPage from '../routes/albumPage';
 import AlbumDetails from '../routes/albumdetailsPage';
+import TodoPage from '../routes/todolistPage';
 
 const screens = {
   
@@ -32,6 +33,10 @@ const screens = {
   AlbumDetailsPage: {
     screen: AlbumDetails
   },
+  TodoPage: {
+    screen: TodoPage
+  }
+  
 
 
 }

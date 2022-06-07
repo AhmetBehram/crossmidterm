@@ -41,6 +41,12 @@ render(){
         }}></Button>
          </View>
 
+         <View style={{backgroundColor:"lightgrey",height:80,justifyContent:"center"}}>
+        <Button title='ToDo List' onPress={() => {
+            navigator.navigate("TodoPage");
+        }}></Button>
+         </View>
+
    </View>
  );
  

@@ -22,7 +22,7 @@ if(props.loading){
 
 
   var names_data=[];
-  for(let i=0;i<20;i++){
+  for(let i=0;i<props.mydata.length;i++){
     let tmp_dic={key : props.mydata[i]["id"] , name : props.mydata[i]["title"]};
     names_data.push(tmp_dic);
   }
@@ -35,7 +35,6 @@ if(props.loading){
         renderItem={({ item }) => (
           <View style={styles.item}>
             <Button onPress={() => {
-                cons
                 props.navigator.navigate('AlbumDetailsPage',{id : item.key});
             }}
              title={item.name} color="black">
