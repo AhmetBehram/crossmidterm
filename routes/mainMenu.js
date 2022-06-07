@@ -35,6 +35,12 @@ render(){
         }}></Button>
          </View>
 
+         <View style={{backgroundColor:"lightblue",height:80,justifyContent:"center"}}>
+        <Button title='Albums' onPress={() => {
+            navigator.navigate("AlbumPage");
+        }}></Button>
+         </View>
+
    </View>
  );
  

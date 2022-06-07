@@ -5,6 +5,8 @@ import UserDetails from '../routes/userdetailsPage'
 import MainMenu from '../routes/mainMenu'
 import PostList from '../routes/postlistPage'
 import PostDetails from '../routes/postdetailsPage'
+import AlbumPage from '../routes/albumPage';
+import AlbumDetails from '../routes/albumdetailsPage';
 
 const screens = {
   
@@ -24,7 +26,12 @@ const screens = {
   PostDetailsPage : {
     screen: PostDetails,
   },
-  
+  AlbumPage : {
+    screen: AlbumPage
+  },
+  AlbumDetailsPage: {
+    screen: AlbumDetails
+  },
 
 
 }
